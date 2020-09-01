@@ -1,6 +1,10 @@
+/*Fonte*/
+@import url('https://fonts.googleapis.com/css2?family=Gayathri:wght@100&display=swap');
+
 /* Gerais */
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: Gayathri, sans-serif;
+  font-weight: 100;
 }
 
 .row {
@@ -18,7 +22,10 @@ p, li {
 
 /* Barra de navegação */
 header, .navbar {
-  background-color: #353D41;
+  background-color: rgba(0, 0, 0, .6);
+  font-size: 17px;
+  text-transform: uppercase;
+  height: 120px;
 }
 
 #nav-container {
@@ -27,7 +34,12 @@ header, .navbar {
 }
 
 #logo {
-  width: 75px;
+  position: relative;
+  width: 100px;
+  transition: 0.5s;
+}
+#logo:hover {
+  width: 135px
 }
 
 .navbar-brand {
@@ -40,7 +52,12 @@ header, .navbar {
 }
 
 #navbar-links a {
-  color: #FFF;
+  color: #FFF; 
+  transition: 0.5s; 
+  margin-right: 30px;
+}
+#navbar-links a:hover {
+  color: rgba(194, 191, 191, 0.795);
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
@@ -291,7 +308,7 @@ header, .navbar {
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   border: 1px solid #65DAF9;
-  display: inline;
+ /* display: inline;*/
   box-sizing: border-box;
   width: 40%;
   height: 40px;
@@ -340,7 +357,7 @@ header, .navbar {
   height: 60px;
   line-height: 60px;
   letter-spacing: 2px;
-  display: inline;
+ /* display: inline;*/
 }
 
 #call-area #call-btn {
