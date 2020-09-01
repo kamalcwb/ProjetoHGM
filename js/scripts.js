@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$(document).ready(function () {
 
   // Progress bar
   let containerA = document.getElementById("circleA");
@@ -8,13 +8,13 @@ $( document ).ready(function() {
     color: '#65DAF9',
     strokeWidth: 8,
     duration: 1400,
-    from: { color: '#aaa'},
-    to: { color: '#65DAF9'},
+    from: { color: '#aaa' },
+    to: { color: '#65DAF9' },
 
-    step: function(state, circle) {
+    step: function (state, circle) {
       circle.path.setAttribute('stroke', state.color);
 
-      var value = Math.round(circle.value() * 60);
+      var value = Math.round(circle.value() * 382);
       circle.setText(value);
 
     }
@@ -28,13 +28,13 @@ $( document ).ready(function() {
     color: '#65DAF9',
     strokeWidth: 8,
     duration: 1600,
-    from: { color: '#aaa'},
-    to: { color: '#65DAF9'},
+    from: { color: '#aaa' },
+    to: { color: '#65DAF9' },
 
-    step: function(state, circle) {
+    step: function (state, circle) {
       circle.path.setAttribute('stroke', state.color);
 
-      var value = Math.round(circle.value() * 254);
+      var value = Math.round(circle.value() * 294);
       circle.setText(value);
 
     }
@@ -48,13 +48,13 @@ $( document ).ready(function() {
     color: '#65DAF9',
     strokeWidth: 8,
     duration: 1800,
-    from: { color: '#aaa'},
-    to: { color: '#65DAF9'},
+    from: { color: '#aaa' },
+    to: { color: '#65DAF9' },
 
-    step: function(state, circle) {
+    step: function (state, circle) {
       circle.path.setAttribute('stroke', state.color);
 
-      var value = Math.round(circle.value() * 32);
+      var value = Math.round(circle.value() * 432);
       circle.setText(value);
 
     }
@@ -68,13 +68,13 @@ $( document ).ready(function() {
     color: '#65DAF9',
     strokeWidth: 8,
     duration: 2000,
-    from: { color: '#aaa'},
-    to: { color: '#65DAF9'},
+    from: { color: '#aaa' },
+    to: { color: '#65DAF9' },
 
-    step: function(state, circle) {
+    step: function (state, circle) {
       circle.path.setAttribute('stroke', state.color);
 
-      var value = Math.round(circle.value() * 5423);
+      var value = Math.round(circle.value() * 423);
       circle.setText(value);
 
     }
@@ -90,7 +90,7 @@ $( document ).ready(function() {
 
     let scroll = $(window).scrollTop();
 
-    if(scroll > (dataAreaOffset.top - 500) && stop == 0) {
+    if (scroll > (dataAreaOffset.top - 500) && stop == 0) {
       circleA.animate(1.0);
       circleB.animate(1.0);
       circleC.animate(1.0);
@@ -104,14 +104,14 @@ $( document ).ready(function() {
   // Parallax
 
   // setTimeout serve para carregar primeiro as imagens
-  setTimeout(function() {
-    $('#data-area').parallax({imageSrc: 'img/cidadeparallax.png'});
-    $('#apply-area').parallax({imageSrc: 'img/pattern.png'});
+  setTimeout(function () {
+    $('#data-area').parallax({ imageSrc: 'img/cidadeparallax.png' });
+    $('#apply-area').parallax({ imageSrc: 'img/pattern.png' });
   }, 200);
 
   // Filtro portfólio
 
-  $('.filter-btn').on('click', function() {
+  $('.filter-btn').on('click', function () {
 
     let type = $(this).attr('id');
     let boxes = $('.project-box');
@@ -119,11 +119,11 @@ $( document ).ready(function() {
     $('.main-btn').removeClass('active');
     $(this).addClass('active');
 
-    if(type == 'dsg-btn') {
+    if (type == 'dsg-btn') {
       eachBoxes('dsg', boxes);
-    } else if(type == 'dev-btn') {
+    } else if (type == 'dev-btn') {
       eachBoxes('dev', boxes);
-    } else if(type == 'seo-btn') {
+    } else if (type == 'seo-btn') {
       eachBoxes('seo', boxes);
     } else {
       eachBoxes('all', boxes);
@@ -133,11 +133,11 @@ $( document ).ready(function() {
 
   function eachBoxes(type, boxes) {
 
-    if(type == 'all') {
+    if (type == 'all') {
       $(boxes).fadeIn();
     } else {
-      $(boxes).each(function() {
-        if(!$(this).hasClass(type)) {
+      $(boxes).each(function () {
+        if (!$(this).hasClass(type)) {
           $(this).fadeOut('slow');
         } else {
           $(this).fadeIn();
@@ -159,26 +159,26 @@ $( document ).ready(function() {
 
   let scrollTo = '';
 
-  $(navBtn).click(function() {
+  $(navBtn).click(function () {
 
     let btnId = $(this).attr('id');
 
-    if(btnId == 'about-menu') {
+    if (btnId == 'about-menu') {
       scrollTo = aboutSection;
-    } else if(btnId == 'services-menu') {
+    } else if (btnId == 'services-menu') {
       scrollTo = servicesSection;
-    } else if(btnId == 'team-menu') {
+    } else if (btnId == 'team-menu') {
       scrollTo = teamSection;
-    } else if(btnId == 'portfolio-menu') {
+    } else if (btnId == 'portfolio-menu') {
       scrollTo = portfolioSection;
-    } else if(btnId == 'contact-menu') {
+    } else if (btnId == 'contact-menu') {
       scrollTo = contactSection;
     } else {
       scrollTo = bannerSection;
     }
 
     $([document.documentElement, document.body]).animate({
-        scrollTop: $(scrollTo).offset().top - 70
+      scrollTop: $(scrollTo).offset().top - 70
     }, 1500);
   });
 
